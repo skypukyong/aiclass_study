@@ -4,7 +4,7 @@ st.write("Hello World!")
 api_key = st.text_input("apikey입력")
 prompt = st.text_input("질문을 입력하세요")
 
-client = OpenAI(api_key)
+client = OpenAI(api_key=f'{api_key}')
 response = client.images.generate(
   model="dall-e-3",
   prompt=prompt)
