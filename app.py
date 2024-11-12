@@ -7,7 +7,7 @@ client = OpenAI(api_key="sk-proj-ZuWhfAtNC5-A7j5WcVXr13jpvEPxDAubibj_B4OWId4iMDS
 response = client.chat.completions.create(
   model="gpt-4o-mini",
   messages=[
-    {"role": "user", "content": "question"}
+    {"role": "user", "content": question}
   ]
 )
 st.write(response.choices[0].message.content)
