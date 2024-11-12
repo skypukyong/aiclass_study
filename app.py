@@ -1,3 +1,3 @@
 import streamlit as st
 st.write("Hello World!")
-st.text_input(label, type="password")
+st.text_input("비밀번호를 입력하세요", type="password")
