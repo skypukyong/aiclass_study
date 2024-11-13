@@ -23,5 +23,3 @@ if api_key:
 
         # 응답 출력
         st.write(response.choices[0].message.content)
-else:
-    st.write("API 키를 입력해 주세요.")
