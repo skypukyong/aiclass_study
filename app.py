@@ -12,7 +12,7 @@ if api_key:
 
     # OpenAI API 호출
     if prompt:  # 질문이 입력된 경우에만 API 요청
-        openai.api_key = api_key  # API 키 설정
+        client = OpenAI(api_key=api_key)
 
         # GPT 모델에 질문 요청
         response = client.chat.completions.create(
