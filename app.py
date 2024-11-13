@@ -1,10 +1,8 @@
 import streamlit as st
 from openai import OpenAI
 st.write("Hello World!")
+api_key = st.text_input("apikey입력")
 if 'key' not in st.session_state:
- st.session_state['key'] = api_key
-else :
- api_key = st.text_input("apikey입력")
  st.session_state['key'] = api_key
 st.write(st.session_state['key'])
 prompt = st.text_input("질문을 입력하세요")
