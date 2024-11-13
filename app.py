@@ -3,8 +3,8 @@ from openai import OpenAI
 st.write("Hello World!")
 if 'key' not in st.session_state:
  api_key = st.text_input("apikey입력")
- st.session_state['key'] = api_key
-api_key=st.session_state['key']
+ st.session_state.key = api_key
+api_key=st.session_state.key
 prompt = st.text_input("질문을 입력하세요")
 client = OpenAI(api_key=api_key)
 response = client.chat.completions.create(
