@@ -1,14 +1,13 @@
 import streamlit as st
 from openai import OpenAI
 @st.cache_data
-def api_key_input():
-    api_key = st.text_input("apikey입력")
+def api_key_input_cash(api_key):
     return api_key
 st.write("Hello World!")
 if 'key' not in st.session_state:
-    
-    if api_key_input():
-        st.session_state.key = api_key_input()
+    api_key = st.text_input("apikey입력")
+    if api_key:
+        st.session_state.key = api_key_input_cash(api_key)
 api_key = st.session_state.get('key')
 if api_key:
     # 질문 입력 받기
