@@ -10,7 +10,7 @@ if 'key' not in st.session_state:
 api_key = st.session_state.get('key')
 if api_key:
     # 질문 입력 받기
-    prompt = st.text_input("질문을 입력하세요")
+    prompt = st.chat_input("질문을 입력하세요")
     st.chat_message(role="user", content=prompt)
 
     # OpenAI API 호출
