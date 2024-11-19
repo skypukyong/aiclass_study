@@ -30,5 +30,5 @@ if prompt:
     answer = ask_gpt(prompt)
 
     with st.chat_message("ai"):
-    st.write(answer)
+        st.write(answer)
 
