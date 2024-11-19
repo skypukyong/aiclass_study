@@ -31,13 +31,15 @@ if api_key:
         st.session_state.messages.append({"role": "user", "content": prompt})
 
         # OpenAI API 호출
-        openai.api_key = api_key  # OpenAI API 키 설정
+        client = OpenAI(api_key=api_key)
 
         # GPT 모델에 질문 요청
-        response = openai.ChatCompletion.create(
-            model="gpt-4",  # 올바른 GPT 모델 사용
-            messages=st.session_state.messages  # 메시지 리스트 전달
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[{"role": "user", "content": prompt}
+            ]
         )
+
 
         # GPT 응답 처리
         response_message = response['choices'][0]['message']['content']
