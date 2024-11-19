@@ -1,5 +1,5 @@
 import streamlit as st
-import openai  # OpenAI 라이브러리 사용
+import openai import OpenAI # OpenAI 라이브러리 사용
 
 # API 키 캐시 함수
 @st.cache_data
