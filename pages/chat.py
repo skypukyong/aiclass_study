@@ -11,7 +11,7 @@ api_key = st.session_state.get('key')
 if api_key:
     # 질문 입력 받기
     prompt = st.text_input("질문을 입력하세요")
-    st.chat_message("user", prompt)
+    st.chat_message(role="user", content=prompt)
 
     # OpenAI API 호출
     if prompt:  # 질문이 입력된 경우에만 API 요청
@@ -26,4 +26,4 @@ if api_key:
 
         # 응답 출력
         response_message=(response.choices[0].message.content)
-        st.chat_message("assistant", response_message)
+        st.chat_message(role="assistant", content=response_message)
