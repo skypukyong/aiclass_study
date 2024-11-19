@@ -3,7 +3,6 @@ from openai import OpenAI
 @st.cache_data
 def api_key_input_cash(api_key):
     return api_key
-st.write("Hello World!")
 if 'key' not in st.session_state:
     api_key = st.text_input("apikey입력")
     if api_key:
