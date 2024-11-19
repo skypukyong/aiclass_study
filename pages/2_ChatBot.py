@@ -24,11 +24,12 @@ st.header("Ask GPT")
 
 prompt = st.chat_input("질문을 입력하세요.")
 st.session_state.prompt = prompt
-with st.chat_message("user"):
-    st.write(prompt)
 
 answer = ''
 if prompt:
+    with st.chat_message("user"):
+        st.write(prompt)
+    
     answer = ask_gpt(prompt)
 
     with st.chat_message("ai"):
