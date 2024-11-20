@@ -1,5 +1,5 @@
 import streamlit as st
-import PyPDF2
+import pdfplumber
 import openai
 import faiss
 import tempfile
@@ -48,11 +48,10 @@ if uploaded_file:
         tmp_file.write(uploaded_file.read())
         tmp_file_path = tmp_file.name
 
-    # PDF 파일에서 텍스트 추출
-    with open(tmp_file_path, "rb") as file:
-        reader = PyPDF2.PdfReader(file)
-        text = ""
-        for page in reader.pages:
+    # pdfplumber를 사용하여 PDF 파일에서 텍스트 추출
+    text = ""
+    with pdfplumber.open(tmp_file_path) as pdf:
+        for page in pdf.pages:
             text += page.extract_text()
 
     # 임시 파일 경로 삭제
