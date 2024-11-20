@@ -22,7 +22,18 @@ st.header("Ask GPT")
 if 'messages' not in st.session_state:
     st.session_state['messages'] = []
 
-# 현재 입력된 prompt
+# Clear 버튼 기능: 대화 스레드를 초기화
+if st.button('Clear'):
+    st.session_state['messages'] = []  # 대화 내역 초기화
+    st.experimental_rerun()  # 페이지 새로고침
+
+# 대화창 나가기 버튼 기능: 대화 스레드 및 Assistant 삭제
+if st.button('대화창 나가기'):
+    st.session_state['messages'] = []  # 대화 내역 초기화
+    st.session_state['openai_client'] = None  # OpenAI 클라이언트 정보 삭제
+    st.experimental_rerun()  # 페이지 새로고침
+
+# 사용자 입력 받기
 prompt = st.chat_input("질문을 입력하세요.")
 st.session_state.prompt = prompt
 
