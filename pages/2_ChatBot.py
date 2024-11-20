@@ -22,6 +22,7 @@ st.header("Ask GPT")
 if 'messages' not in st.session_state:
     st.session_state['messages'] = []
 
+# 현재 입력된 prompt
 prompt = st.chat_input("질문을 입력하세요.")
 st.session_state.prompt = prompt
 
@@ -36,11 +37,8 @@ if prompt:
     # AI의 응답을 대화 내역에 추가
     st.session_state['messages'].append({"role": "assistant", "content": answer})
 
-    # 대화 표시
-    with st.chat_message("user"):
-        st.write(prompt)
-    
-    with st.chat_message("assistant"):
-        st.write(answer)
+# 전체 대화 내역을 출력
+for message in st.session_state['messages']:
+    with st.chat_message(message['role']):
+        st.write(message['content'])
 
-# 대화 내역을 계속 이어가려면 이 코드를 사용합니다.
