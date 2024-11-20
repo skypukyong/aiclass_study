@@ -23,7 +23,9 @@ if 'messages' not in st.session_state:
     st.session_state['messages'] = []
 
     # 시스템 메시지 추가 (여기서 도서관 규정 추가)
-    st.session_state['messages'].append({
+    st.session_state['messages'].append(
+        {"role":"system","content":"다음 시스템 콘텐츠에 관한 질문만 대답하고 다른 질문을 모른다고 답해."},
+        {
         "role": "system", 
         "content": """
         국립부경대학교 도서관 규정
