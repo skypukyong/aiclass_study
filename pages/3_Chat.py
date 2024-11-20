@@ -16,7 +16,7 @@ if client is None:
         st.switch_page("pages/1_Setting.py")
     st.stop()
 
-st.header("Ask GPT")
+st.header("Ask GPT >> Pukyong")
 
 # 대화 내역을 session_state에 저장
 if 'messages' not in st.session_state:
