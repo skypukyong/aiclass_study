@@ -465,5 +465,6 @@ if prompt:
 
 # 전체 대화 내역을 출력
 for message in st.session_state['messages']:
-    with st.chat_message(message['role']):
-        st.write(message['content'])
+    if (message["role"]!="system"):
+        with st.chat_message(message['role']):
+            st.write(message['content'])
