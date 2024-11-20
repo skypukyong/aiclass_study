@@ -1,4 +1,5 @@
 import streamlit as st
+!pip install pdfplumber
 from openai import OpenAI
 
 api_key = st.text_input("OpenAI API Key", 
